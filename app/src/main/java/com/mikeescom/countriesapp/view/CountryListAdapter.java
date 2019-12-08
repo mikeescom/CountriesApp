@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.mikeescom.countriesapp.R;
+import com.mikeescom.countriesapp.Util;
 import com.mikeescom.countriesapp.model.CountryModel;
 
 import java.util.List;
@@ -66,6 +67,7 @@ public class CountryListAdapter extends RecyclerView.Adapter<CountryListAdapter.
         void bind(CountryModel country) {
             countryName.setText(country.getCountryName());
             countryCapital.setText(country.getCapital());
+            Util.loadImage(countryImage, country.getFlag(), Util.getProgressDrawable(countryImage.getContext()));
         }
     }
 }
